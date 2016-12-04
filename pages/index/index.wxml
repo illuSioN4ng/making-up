@@ -1,10 +1,38 @@
 <!--index.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
+  <!--<view  bindtap="bindViewTap" class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
+  </view>-->
+  <view class="location-info">
+    当前圈子：电子科技大学清水河校区
   </view>
+
+  <view class="order-item" wx:for="{{orders}}">
+    <image class="author-avatar" src="{{ item.avatarUrl}}" background-size="cover"></image>
+    <view class="author-info">
+      <view class="author">{{ item.nickName}}</view>
+      <view class="post-time">{{ item.postTime}}</view>
+    </view>
+    <view class="content-container">
+       <image class="content-picture" src="{{ item.pictures[0] }}" background-size="cover"></image>
+       <view class="content-text">
+          <view class="title">
+            {{ item.title }}
+          </view>
+          <view class="content">
+            {{ item.content }}
+          </view>
+        </view>
+        <view class="button">
+          <view class="button-item thumbs-up">赞</view>
+          <view class="button-item comment">评论</view>
+          <view class="button-item join">立即加入</view>
+        </view>
+    </view>
+  </view>
+  <view class="post-button"></view>
 </view>

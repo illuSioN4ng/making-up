@@ -17,5 +17,105 @@
 }
 
 .usermotto {
-  margin-top: 200px;
+  margin-top: 100px;
+}
+
+.location-info {
+   /* Box-model */
+  height: 20px;
+  padding-left: 20px;
+  margin-bottom: 5px;
+
+  /*Typography*/
+  line-height: 20px;
+
+  /* Visual */
+  background: url(../../images/073-location2.png) 2px no-repeat #fff;
+  /*border: solid 1px black;*/
+}
+
+.order-item {
+  margin-bottom: 5px;
+  padding: 15rpx;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.author-avatar {
+  float: left;
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 10%;
+}
+
+.author-info {
+  float: left;
+  width: 200px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+
+.content-container {
+  clear: both;
+  overflow: hidden;
+}
+
+.content-container .content-picture {
+  float: left;
+  width: 192rpx;
+  height: 192rpx;
+}
+
+.content-container .content-text {
+  float: left;
+  width: calc(100% - 210rpx);
+  height: 192rpx;
+  margin-left: 18rpx;
+  overflow: hidden;
+}
+
+.content-text .title {
+  height: 40rpx;
+  margin-bottom: 12rpx;
+}
+
+.content-text .content {
+  height: 140rpx;
+}
+
+.content-container .button {
+  float: left;
+}
+
+.content-container .button .button-item {
+  float: left;
+  width: 240rpx;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+}
+
+.button-item.thumbs-up {
+  background: url(../../images/219-heart.png) no-repeat 40rpx 5px;
+}
+
+.button-item.comment {
+  background: url(../../images/111-bubble2.png) no-repeat 40rpx 5px;
+}
+
+.button-item.join {
+  background: url(../../images/074-compass.png) no-repeat 40rpx 5px;
+}
+
+.post-button {
+  position: fixed;
+  bottom: 300rpx;
+  right: 50rpx;
+
+  width: 32px;
+  height: 32px;
+  
+  /*border: solid 1px black;*/
+  background: url(../../images/007-pencil2.png) no-repeat;
 }

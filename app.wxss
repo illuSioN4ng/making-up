@@ -1,10 +1,18 @@
 /**app.wxss**/
 .container {
+
+  /*box-model*/
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
+  align-items: left;
+  justify-content: flex-start;
+  /*padding: 200rpx 0;*/
   box-sizing: border-box;
+
+  margin-bottom: 60px;/*防止tabBar遮挡*/
+
+  /*typography*/
+  font: 12px/150% arial,\5FAE\8F6F\96C5\9ED1,\5b8b\4f53;
+  background-color: #ccc;
 } 

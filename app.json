@@ -6,7 +6,33 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "凑单神器",
     "navigationBarTextStyle":"black"
-  }
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#999",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "凑单",
+      "iconPath": "./images/home.png",
+      "selectedIconPath": "./images/home.png"
+    },{
+      "pagePath": "pages/privilege-list/privilege-list",
+      "text": "优惠信息",
+      "iconPath": "./images/newspaper.png",
+      "selectedIconPath": "./images/newspaper.png"
+    }, {
+      "pagePath": "pages/personal-information/personal-information",
+      "text": "我的",
+      "iconPath": "./images/man.png",
+      "selectedIconPath": "./images/man.png"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
 }
