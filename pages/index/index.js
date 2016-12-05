@@ -3,51 +3,17 @@
 var app = getApp();
 //查询用户信息
 const AV = require('../../libs/av-weapp.js');
+var orderFormat = require('../../utils/orderFormat.js');
 Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
-    orders: [
-      {
-        avatarUrl: "http://wx.qlogo.cn/mmhead/kpUbvkMbNAdpQbvZBgncDWcRg7m4Dfkvy1cpIVNhdt8/132",
-        nickName: 'illuSioN4ng',
-        postTime: '2017-1-23',
-        pictures: [
-          'http://wx.qlogo.cn/mmhead/kpUbvkMbNAdpQbvZBgncDWcRg7m4Dfkvy1cpIVNhdt8/132',
-          'http://wx.qlogo.cn/mmhead/kpUbvkMbNAdpQbvZBgncDWcRg7m4Dfkvy1cpIVNhdt8/132',
-          'http://wx.qlogo.cn/mmhead/kpUbvkMbNAdpQbvZBgncDWcRg7m4Dfkvy1cpIVNhdt8/132'
-        ],
-        title: '京东双十一洗护类199减10',
-        content: '已选128元商品，还差71元，小伙伴们快来凑单！！'
-      },{
-        avatarUrl: "http://wx.qlogo.cn/mmhead/kpUbvkMbNAdpQbvZBgncDWcRg7m4Dfkvy1cpIVNhdt8/132",
-        nickName: 'illuSioN4ng',
-        postTime: '2017-1-23',
-        pictures: [
-          'http://wx.qlogo.cn/mmhead/kpUbvkMbNAdpQbvZBgncDWcRg7m4Dfkvy1cpIVNhdt8/132',
-          'http://wx.qlogo.cn/mmhead/kpUbvkMbNAdpQbvZBgncDWcRg7m4Dfkvy1cpIVNhdt8/132',
-          'http://wx.qlogo.cn/mmhead/kpUbvkMbNAdpQbvZBgncDWcRg7m4Dfkvy1cpIVNhdt8/132'
-        ],
-        title: '京东双十一洗护类199减10',
-        content: '已选128元商品，还差71元，小伙伴们快来凑单！！'
-      },{
-        avatarUrl: "http://wx.qlogo.cn/mmhead/kpUbvkMbNAdpQbvZBgncDWcRg7m4Dfkvy1cpIVNhdt8/132",
-        nickName: 'illuSioN4ng',
-        postTime: '2017-1-23',
-        pictures: [
-          'http://wx.qlogo.cn/mmhead/kpUbvkMbNAdpQbvZBgncDWcRg7m4Dfkvy1cpIVNhdt8/132',
-          'http://wx.qlogo.cn/mmhead/kpUbvkMbNAdpQbvZBgncDWcRg7m4Dfkvy1cpIVNhdt8/132',
-          'http://wx.qlogo.cn/mmhead/kpUbvkMbNAdpQbvZBgncDWcRg7m4Dfkvy1cpIVNhdt8/132'
-        ],
-        title: '京东双十一洗护类199减10',
-        content: '已选128元商品，还差71元，小伙伴们快来凑单！！'
-      }
-    ]
+    orders: []
   },
   //事件处理函数
-  bindViewTap: function() {
+  navToPost: function() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../post/post'
     })
   },
   onLoad: function () {
@@ -60,6 +26,41 @@ Page({
       that.setData({
         userInfo:userInfo
       });
-    })
+    });
+
+// 修改对象
+  // var order = AV.Object.createWithoutData('orders', '5843fe81ac502e006ba5efb0');
+  // // 修改属性
+  // order.set('author', userInfo);
+  // // 保存到云端
+  // order.save();
+   
+// 查询单个对象
+    // var orders = new AV.Query('orders'),
+    // that = this;
+    // console.log(orders);
+    // orders.get('5843fe81ac502e006ba5efb0').then(order => {
+    //   order = orderFormat.orderFormat(order);
+    //   var ordersArr = [];
+    //   ordersArr.push(order);
+    //   that.setData({
+    //     orders: ordersArr
+    //   });
+
+    //   console.log('+++++++++++++++++', ordersArr);
+    // }, error => console.log(error));
+
+//查询多个数据，即首页数据列表查询
+    var orders = new AV.Query('orders');
+    orders.descending('createdAt').find().then(function (results) {
+      results = results.map((curvalue) => {
+        return orderFormat.orderFormat(curvalue);
+      });
+      console.log(results);
+      that.setData({
+        orders: results
+      });
+  }, function (error) {
+  });
   }
 })

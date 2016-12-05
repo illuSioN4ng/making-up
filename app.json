@@ -1,6 +1,8 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/detail/detail",
+    "pages/post/post",
     "pages/logs/logs"
   ],
   "window":{
@@ -33,6 +35,5 @@
   "networkTimeout": {
     "request": 10000,
     "downloadFile": 10000
-  },
-  "debug": true
+  }
 }

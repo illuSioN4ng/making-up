@@ -86,6 +86,7 @@
 
 .content-container .button {
   float: left;
+  margin-top: 12rpx;
 }
 
 .content-container .button .button-item {
@@ -97,15 +98,15 @@
 }
 
 .button-item.thumbs-up {
-  background: url(../../images/219-heart.png) no-repeat 40rpx 5px;
+  background: url(../../images/219-heart.png) no-repeat 30rpx 5px;
 }
 
 .button-item.comment {
-  background: url(../../images/111-bubble2.png) no-repeat 40rpx 5px;
+  background: url(../../images/111-bubble2.png) no-repeat 30rpx 5px;
 }
 
 .button-item.join {
-  background: url(../../images/074-compass.png) no-repeat 40rpx 5px;
+  background: url(../../images/074-compass.png) no-repeat 30rpx 5px;
 }
 
 .post-button {

@@ -1,0 +1,28 @@
+<form bindsubmit="formSubmit">
+    <view class="post-container">
+        <view class="label">
+            标题
+        </view>
+        <input bindinput="titleEventFunc" id="title" class="title form-common-style" placeholder="示例：京东洗护199-100求拼单" auto-focus/>
+        <view class="label">
+            内容
+        </view>
+        <textarea bindblur="contentEventFunc" id="content" class="content form-common-style" maxlength="150" placeholder="示例：已选16元商品，还差4元，小伙伴们快来凑单！！" />
+        <view class="label">
+            具体优惠形式
+        </view>
+        <input bindinput="descriptionEventFunc" id="description" class="description form-common-style" placeholder="示例：199-100；满20起送等" auto-focus/>
+        <view class="label">
+            添加照片信息
+        </view>
+        <image wx:for="{{ pictures }}" src="{{ item }}" wx:key="{{ index }}"></image>
+        <view wx:if="{{pictures.length < 3}}" id="addImageButton" class="image-add-button form-common-style" bindtap="chooseImage">
+            +
+        </view>
+        <view class="label">
+            活动页面链接
+        </view>
+        <input bindinput="activityUrlEventFunc" id="url" class="url form-common-style"/>
+        <button formType="submit" type="primary" class="submit form-common-style"> 立即发布 </button>
+    </view>
+</form>

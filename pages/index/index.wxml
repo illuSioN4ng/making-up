@@ -11,11 +11,11 @@
     当前圈子：电子科技大学清水河校区
   </view>
 
-  <view class="order-item" wx:for="{{orders}}">
-    <image class="author-avatar" src="{{ item.avatarUrl}}" background-size="cover"></image>
+  <view class="order-item" wx:for="{{orders}}" wx:key="id">
+    <image class="author-avatar" src="{{ item.author.avatarUrl}}" background-size="cover"></image>
     <view class="author-info">
-      <view class="author">{{ item.nickName}}</view>
-      <view class="post-time">{{ item.postTime}}</view>
+      <view class="author">{{ item.author.nickName}}</view>
+      <view class="post-time">{{ item.createdAt}}</view>
     </view>
     <view class="content-container">
        <image class="content-picture" src="{{ item.pictures[0] }}" background-size="cover"></image>
@@ -34,5 +34,5 @@
         </view>
     </view>
   </view>
-  <view class="post-button"></view>
+  <view class="post-button" bindtap="navToPost"></view>
 </view>
