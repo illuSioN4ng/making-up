@@ -3,7 +3,8 @@
 var app = getApp();
 //查询用户信息
 const AV = require('../../libs/av-weapp.js');
-var orderFormat = require('../../utils/orderFormat.js');
+var orderFormat = require('../../utils/orderFormat.js'),
+  util = require('../../utils/util.js');
 Page({
   data:{
     url: "http://wx.qlogo.cn/mmhead/kpUbvkMbNAdpQbvZBgncDWcRg7m4Dfkvy1cpIVNhdt8/132",
@@ -53,21 +54,14 @@ Page({
   onUnload:function(){
     // 页面关闭
   },
-  imageEvent: function(e){
-    console.log('11111111111111');
-    console.log(e);
-  },
-  EventHandle: function(e){
-    console.log(e);
-  },
   commentInput: function(e){
     console.log(e);
     this.data.commentObj.author = this.data.userInfo;
     this.data.commentObj.commentStr = e.detail.value;
     this.data.commentObj.createAt = new Date();
+    this.data.commentObj.formatDate = util.formatTime(this.data.commentObj.createAt);
   },
   commentSubmit: function(e) {
-    console.log('form发生了submit事件，携带数据为：', e);
     if(!this.data.commentObj.commentStr || this.data.commentObj.commentStr === ''){
       console.log(this.data);
       wx.showToast({
@@ -81,7 +75,7 @@ Page({
     var order = AV.Object.createWithoutData('orders', this.data.order.id);
     order.set('comments', this.data.comments);
     order.save().then(order => {
-      wx.navigateTo({
+      wx.redirectTo({
         url: './detail?objId=' + this.data.order.id 
       });
     }, (error) => {

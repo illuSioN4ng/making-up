@@ -57,7 +57,10 @@
 
 .order-comment {
     margin: 25rpx 0 50rpx;
-    border-bottom: solid 1px #ccc
+}
+
+.order-comment:not(:last-child) {
+    border-bottom: solid 1px #ccc;
 }
 
 .order-comment .comment-str {

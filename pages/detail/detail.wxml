@@ -7,7 +7,7 @@
             <image class="author-avatar" src="{{ order.author.avatarUrl}}" background-size="cover"></image>
             <view class="author-info">
                 <view class="author-name">{{ order.author.nickName}}</view>
-                <view class="post-time">{{ order.createdAt}}</view>
+                <view class="post-time">{{ order.formatDate}}</view>
             </view>
         </view>
         <view class="order-title">
@@ -33,7 +33,7 @@
                     <image class="author-avatar" src="{{ item.author.avatarUrl}}" background-size="cover"></image>
                     <view class="author-info">
                         <view class="author-name">{{ item.author.nickName}}</view>
-                        <view class="post-time">{{ item.createAt }}</view>
+                        <view class="post-time">{{ item.formatDate }}</view>
                     </view>
                 </view>
                 <view class="comment-str">
@@ -42,6 +42,8 @@
             </view>
         </view>
     </view>
+    <view bindtap="redirect">
+    减肥开始的进口量法</view>
     <view class="tool-bar">
         <form bindsubmit="commentSubmit" data-objId="{{ order.id }}">
             <input bindinput="commentInput" placeholder="输入评论" class="comment-input" />

@@ -105,7 +105,7 @@ Page({
           order.save().then(function (order) {
             // 成功保存之后，执行其他逻辑.
             console.log(order);
-            wx.redirectTo({
+            wx.navigateTo({
                 url: '../index/index'
             })
           }, function (error) {

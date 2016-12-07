@@ -1,3 +1,5 @@
+var util = require('./util.js');
+
 function orderFormate(obj) {
     var retObj = {};
     retObj.author = obj.get('author');
@@ -10,6 +12,7 @@ function orderFormate(obj) {
     retObj.description = obj.get('description');
     retObj.updatedAt = obj.updatedAt;
     retObj.createdAt = obj.createdAt;
+    retObj.formatDate = util.formatTime(obj.updatedAt);
     return retObj;
 }
 
