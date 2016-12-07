@@ -1,5 +1,10 @@
 var util = require('./util.js');
 
+/**
+ *
+ * @param obj (leanCloud查询返回对象)
+ * @returns formatObj
+ */
 function orderFormate(obj) {
     var retObj = {};
     retObj.author = obj.get('author');
