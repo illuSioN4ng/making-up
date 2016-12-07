@@ -2,7 +2,10 @@
   "pages":[
     "pages/index/index",
     "pages/detail/detail",
-    "pages/post/post",
+    "pages/post/post",    
+    "pages/privilege-list/privilege-list",
+    "pages/privilege-detail/privilege-detail",
+    "pages/personal-information/personal-information",
     "pages/logs/logs"
   ],
   "window":{
