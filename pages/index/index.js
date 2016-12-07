@@ -14,10 +14,9 @@ Page({
   navToPost: function() {
     wx.navigateTo({
       url: '../post/post'
-    })
+    });
   },
   onLoad: function () {
-    console.log('onLoad')
     var that = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
@@ -60,7 +59,16 @@ Page({
       that.setData({
         orders: results
       });
-  }, function (error) {
-  });
+    }, function (error) {
+      
+    });
+  },
+  navToDetail: function(event) {
+    console.log(event);
+    var objId = event.currentTarget.dataset.id;
+    console.log(objId);
+    wx.navigateTo({
+      url: '../detail/detail?objId=' + objId 
+    });
   }
 })

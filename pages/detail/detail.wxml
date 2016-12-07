@@ -1,0 +1,51 @@
+<!--<scroll-view class="test" bindscroll="EventHandle" scroll-x="{{ scrollX }}" scroll-y="{{ scrollY }}">
+    <image bindload="imageEvent" src="{{ url }}"></image>
+</scroll-view>-->
+<view class="container">
+    <view bindtap="" class="order-detail" data-id="{{ order.id }}">
+        <view class="author">
+            <image class="author-avatar" src="{{ order.author.avatarUrl}}" background-size="cover"></image>
+            <view class="author-info">
+                <view class="author-name">{{ order.author.nickName}}</view>
+                <view class="post-time">{{ order.createdAt}}</view>
+            </view>
+        </view>
+        <view class="order-title">
+            {{ order.title }}
+        </view>
+        <view class="order-content">
+            {{ order.content }}
+        </view>
+        <view class="order-description">
+            {{ order.description }}
+        </view>
+        <view class="piuctures-container">
+            <image class="content-picture" wx:for="{{ order.pictures }}" wx:key="{{ index }}" src="{{ item }}" background-size="cover"></image>            
+        </view>
+        <view class="order-description" wx:if="{{order.url != ''}}">
+            活动页面链接
+            <view>{{ order.url }}</view>
+        </view>
+        <view class="order-comments" wx:if="{{ order.comments && order.comments.length > 0 }}">
+            评论：
+            <view class="order-comment" wx:for="{{ order.comments }}" wx:key="{{ index }}">
+                <view class="author">
+                    <image class="author-avatar" src="{{ item.author.avatarUrl}}" background-size="cover"></image>
+                    <view class="author-info">
+                        <view class="author-name">{{ item.author.nickName}}</view>
+                        <view class="post-time">{{ item.createAt }}</view>
+                    </view>
+                </view>
+                <view class="comment-str">
+                    {{ item.commentStr }}
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="tool-bar">
+        <form bindsubmit="commentSubmit" data-objId="{{ order.id }}">
+            <input bindinput="commentInput" placeholder="输入评论" class="comment-input" />
+            <button type="primary" form-type="submit" class="comment-submit"> 发布评论 </button>
+        </form>
+    </view>
+</view>

@@ -1,5 +1,9 @@
 /**index.wxss**/
-.userinfo {
+.index-container {
+  background-color: #f2f2f2;
+}
+
+/*.userinfo {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,27 +22,30 @@
 
 .usermotto {
   margin-top: 100px;
-}
+}*/
 
 .location-info {
    /* Box-model */
-  height: 20px;
+  height: 30px;
   padding-left: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 
   /*Typography*/
-  line-height: 20px;
+  line-height: 30px;
 
   /* Visual */
-  background: url(../../images/073-location2.png) 2px no-repeat #fff;
-  /*border: solid 1px black;*/
+  background: url(../../images/location.png) 2px no-repeat #fff;
+  border: solid #e5e5e5;
+  border-width: 1px 0;
 }
 
 .order-item {
-  margin-bottom: 5px;
+  margin-bottom: 7px;
   padding: 15rpx;
   overflow: hidden;
   background-color: #fff;
+  border: solid #e5e5e5;
+  border-width: 1px 0;
 }
 
 .author-avatar {
@@ -55,7 +62,6 @@
   margin-bottom: 10px;
 }
 
-
 .content-container {
   clear: both;
   overflow: hidden;
@@ -69,15 +75,17 @@
 
 .content-container .content-text {
   float: left;
-  width: calc(100% - 210rpx);
+  width: calc(100% - 230rpx);
   height: 192rpx;
-  margin-left: 18rpx;
+  margin-left: 38rpx;
   overflow: hidden;
 }
 
 .content-text .title {
-  height: 40rpx;
-  margin-bottom: 12rpx;
+  height: 14px;
+  margin-bottom: 22rpx;
+
+  font-size: 40rpx;
 }
 
 .content-text .content {
@@ -87,6 +95,7 @@
 .content-container .button {
   float: left;
   margin-top: 12rpx;
+  /*border: solid 1px #999;*/
 }
 
 .content-container .button .button-item {
@@ -97,26 +106,30 @@
   text-align: center;
 }
 
+.button-item:not(:last-child) {
+  border-right: solid 1px #ccc;
+}
+
 .button-item.thumbs-up {
-  background: url(../../images/219-heart.png) no-repeat 30rpx 5px;
+  background: url(../../images/thumbs-up.png) no-repeat 30rpx 5px;
 }
 
 .button-item.comment {
-  background: url(../../images/111-bubble2.png) no-repeat 30rpx 5px;
+  background: url(../../images/comment.png) no-repeat 30rpx 5px;
 }
 
 .button-item.join {
-  background: url(../../images/074-compass.png) no-repeat 30rpx 5px;
+  background: url(../../images/join.png) no-repeat 30rpx 5px;
 }
 
 .post-button {
   position: fixed;
-  bottom: 300rpx;
+  bottom: 200rpx;
   right: 50rpx;
 
   width: 32px;
   height: 32px;
   
   /*border: solid 1px black;*/
-  background: url(../../images/007-pencil2.png) no-repeat;
+  background: url(../../images/post-order3.png) no-repeat;
 }

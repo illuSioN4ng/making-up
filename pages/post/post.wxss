@@ -1,7 +1,6 @@
 .post-container {
     background-color: #fff;
     padding: 20rpx;
-
     font: 12px/150% arial,\5FAE\8F6F\96C5\9ED1,\5b8b\4f53;
 }
 

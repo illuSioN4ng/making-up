@@ -7,6 +7,7 @@ function orderFormate(obj) {
     retObj.url = obj.get('url');
     retObj.pictures = obj.get('pictures');
     retObj.comments = obj.get('comments');
+    retObj.description = obj.get('description');
     retObj.updatedAt = obj.updatedAt;
     retObj.createdAt = obj.createdAt;
     return retObj;

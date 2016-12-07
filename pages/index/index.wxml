@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<view class="container index-container">
   <!--<view  bindtap="bindViewTap" class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
@@ -11,7 +11,7 @@
     当前圈子：电子科技大学清水河校区
   </view>
 
-  <view class="order-item" wx:for="{{orders}}" wx:key="id">
+  <view bindtap="navToDetail" class="order-item" wx:for="{{orders}}" wx:key="id" data-id="{{ item.id }}">
     <image class="author-avatar" src="{{ item.author.avatarUrl}}" background-size="cover"></image>
     <view class="author-info">
       <view class="author">{{ item.author.nickName}}</view>
