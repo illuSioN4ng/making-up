@@ -42,8 +42,6 @@
             </view>
         </view>
     </view>
-    <view bindtap="redirect">
-    减肥开始的进口量法</view>
     <view class="tool-bar">
         <form bindsubmit="commentSubmit" data-objId="{{ order.id }}">
             <input bindinput="commentInput" placeholder="输入评论" class="comment-input" />
