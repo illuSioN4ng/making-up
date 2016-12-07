@@ -1,0 +1,106 @@
+/* pages/privilege-detail/privilege-detail.wxss */
+.container{
+    background-color: #ccc;
+}
+
+.privilege-title{
+  border:1px solid #000;
+  height:300rpx;
+  background-color: #ffcc33;
+  font-size: 18px;
+  line-height: 300rpx;
+  text-align: center;    
+}
+
+.privilege-info{
+    margin-bottom: 20rpx;
+    background-color: #fff;
+    padding: 20rpx 10rpx;
+}
+
+.info-summary{
+    padding:20rpx;
+    font-size: 16px;
+}
+.info-detail{
+    font-size:14px;
+    line-height:20px;
+    text-indent: 20rpx;
+}
+.orders-info{
+    background-color: #fff;
+    padding:20rpx;
+}
+
+.orders-info-title{
+    padding:20rpx;
+    font-size: 16px;
+}
+
+.orders-info-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#e4e4e4;
+    margin-bottom: 5px;
+    padding:10rpx;
+    font-size: 14px;
+    font-family: 'microsoft yahei';
+}
+
+.order-item-img{
+    width:100rpx;
+    height:100rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+}
+
+.order-item-name{
+    width: 180rpx;
+    text-align: left;
+}
+.order-item-status{
+    width: 130rpx;
+    text-align: right;
+}
+.order-item-look{
+    width: 200rpx;
+    height:100rpx;
+    background-color:#ffcc33;
+    text-align: center;
+    line-height: 100rpx;
+    border-radius: 10rpx;
+    color: #fff;
+    font-weight: 600;
+}
+.order-item-look.undo-look{
+    background-color: #999;
+}
+
+
+.privilege-join{
+    position: fixed;
+    bottom: 0;
+    height:80rpx;
+    width: 100%;
+    line-height: 80rpx;
+    border:1px solid #000;
+    background-color: #fff;
+}
+
+.privilege-praise{
+    background: url(../../images/219-heart.png) no-repeat 30rpx 25rpx;
+    padding-left:80rpx;
+    display: inline-block;
+
+}
+
+.join{
+    width:300rpx;
+    text-align: center;
+    background-color: #ffcc33;
+    display: inline-block;
+    float: right;
+    font-size: 14px;
+}

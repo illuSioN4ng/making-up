@@ -1,0 +1,28 @@
+.container{
+    background-color: #ccc;
+}
+
+.my-info,.order-info,.other-info{
+    background-color:#fff;
+    margin-top: 20rpx;
+    font-size: 14px;
+    line-height: 28px;
+    padding:40rpx;
+}
+.my-info{
+
+}
+.my-img{
+    width:100rpx;
+    height:100rpx;
+    background-color: #234290;
+    border-radius: 20rpx;
+    display: inline-block;
+    float: left;
+    margin-right: 40rpx;
+}
+
+.info-icon{
+     background: url(../../images/074-compass.png) no-repeat 0rpx 15rpx;
+     padding-left:60rpx;
+}
