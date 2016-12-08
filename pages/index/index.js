@@ -8,7 +8,8 @@ Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
-    orders: []
+    orders: [],
+    manage:{}
   },
   //事件处理函数
   navToPost: function() {
@@ -16,7 +17,8 @@ Page({
       url: '../post/post'
     });
   },
-  onLoad: function () {
+  onLoad: function (e) {
+    console.log(e.user)
     var that = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
@@ -51,6 +53,15 @@ Page({
 
 //查询多个数据，即首页数据列表查询
     var orders = new AV.Query('orders');
+    if(e.user){
+      orders.equalTo('author.nickName', e.user);
+      that.setData({
+        manage: {
+          user:e.user,
+          display:false
+          }
+      });
+    }
     orders.descending('createdAt').find().then(function (results) {
       results = results.map((curvalue) => {
         return orderFormat.orderFormat(curvalue);
@@ -70,5 +81,30 @@ Page({
     wx.navigateTo({
       url: '../detail/detail?objId=' + objId 
     });
+  },
+  manageOrder:function(e){
+    console.log(e.currentTarget.id)
+    var that =this
+    that.data.manage.display = !that.data.manage.display;
+    that.data.manage.orderId = e.currentTarget.id;
+    if(that.data.manage.display){
+      that.data.manage.do = ['删除','分享']
+    }else{
+      delete that.data.manage.do
+    }   
+    that.setData({
+      manage:that.data.manage
+    })
+  },
+  deleteOrder:function(e){
+    console.log(e.id);
+  // var order = AV.Object.createWithoutData('orders', e.id)
+  // order.destroy().then(function (success) {
+  //   cossole.log(success)
+  //   // 删除成功
+  // }, function (error) {
+  //   cossole.log(error)
+  //   // 删除失败
+  // });
   }
 })

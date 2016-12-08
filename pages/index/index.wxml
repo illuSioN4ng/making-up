@@ -17,6 +17,12 @@
       <view class="author">{{ item.author.nickName}}</view>
       <view class="post-time">{{ item.formatDate}}</view>
     </view>
+    <view class="manageOrder" catchtap="manageOrder" wx:if="{{manage.user}}" id="{{ item.id }}">
+      <image class="manage-img" src="../../images/u1919.png"></image>
+      <view wx:if="{{item.id == manage.orderId}}">
+        <view wx:if="{{manage.do}}"  wx:for="{{manage.do}}" wx:key="id" class="manage-item" catchtap="deleteOrder" id="{{manage.orderId}}">{{item}}</view>
+      </view>      
+    </view>
     <view class="content-container">
        <image class="content-picture" src="{{ item.pictures[0] }}" background-size="cover"></image>
        <view class="content-text">
