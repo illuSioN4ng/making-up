@@ -78,7 +78,6 @@ Page({
     });
   },
   showQRCode: function(e) {
-    console.log(e);
     this.setData({
       QRCodeShow: e.target.dataset.qrcode,
       QRCodeShowFlag: true
