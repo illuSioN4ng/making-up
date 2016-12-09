@@ -6,7 +6,6 @@ const AV = require('../../libs/av-weapp.js');
 var orderFormat = require('../../utils/orderFormat.js');
 Page({
   data: {
-    motto: 'Hello World',
     userInfo: {},
     orders: [],
     manage:{},
@@ -28,6 +27,7 @@ Page({
         userInfo:userInfo
       });
     });
+    console.log(this.data);
 
 // 修改对象
   // var order = AV.Object.createWithoutData('orders', '5843fe81ac502e006ba5efb0');

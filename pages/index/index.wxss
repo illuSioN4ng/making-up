@@ -102,7 +102,7 @@
 
 .content-container .button .button-item {
   float: left;
-  width: 240rpx;
+  width: 235rpx;
   height: 26px;
   line-height: 26px;
   text-align: center;

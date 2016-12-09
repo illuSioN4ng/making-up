@@ -21,18 +21,18 @@
     "list": [{
       "pagePath": "pages/index/index",
       "text": "凑单",
-      "iconPath": "./images/order.png",
-      "selectedIconPath": "./images/order-active.png"
+      "iconPath": "images/order.png",
+      "selectedIconPath": "images/order-active.png"
     },{
       "pagePath": "pages/privilege-list/privilege-list",
       "text": "优惠信息",
-      "iconPath": "./images/privilege.png",
-      "selectedIconPath": "./images/privilege-active.png"
+      "iconPath": "images/privilege.png",
+      "selectedIconPath": "images/privilege-active.png"
     }, {
       "pagePath": "pages/personal-information/personal-information",
       "text": "我的",
-      "iconPath": "./images/personal.png",
-      "selectedIconPath": "./images/personal-active.png"
+      "iconPath": "images/personal.png",
+      "selectedIconPath": "images/personal-active.png"
     }]
   },
   "networkTimeout": {
