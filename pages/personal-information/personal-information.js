@@ -1,8 +1,23 @@
+//获取应用实例
+var app = getApp();
+//查询用户信息
+const AV = require('../../libs/av-weapp.js');
 
 Page({
-  data:{},
+  data:{
+    userInfo: {}
+  },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
+    var that = this
+    //调用应用实例的方法获取全局数据
+    app.getUserInfo(function(userInfo){
+      //更新数据
+      console.log(userInfo);
+      that.setData({
+        userInfo:userInfo
+      });
+    });
   },
   onReady:function(){
     // 页面渲染完成
@@ -15,5 +30,10 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
+  },
+  myOrders:function(){
+    wx.navigateTo({
+      url: '../index/index?user='+this.data.userInfo.nickName
+    })    
   }
 })

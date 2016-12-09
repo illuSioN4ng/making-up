@@ -8,17 +8,18 @@ Page({
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参
     var that = this;
-    console.log('优惠load********')
     let disc = [];
     let discount = new AV.Query('discount');
     discount.find().then(function (results) {
       for (let i=0; i<results.length; i++){
+        results[i].attributes.id = results[i].id;
         disc.push(results[i].attributes);
       }
       that.setData({
         discount: disc
       });
     });
+    
   },
   onReady:function(){
     // 页面渲染完成
@@ -33,7 +34,7 @@ Page({
     // 页面关闭
   },
   seeDetail:function(e){
-    let disId = e.currentTarget.id;
+    let disId = e.currentTarget.dataset.id;
     wx.navigateTo({
         url: "../privilege-detail/privilege-detail?id="+disId
     })

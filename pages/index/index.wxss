@@ -46,6 +46,7 @@
   background-color: #fff;
   border: solid #e5e5e5;
   border-width: 1px 0;
+  position: relative;
 }
 
 .author-avatar {
@@ -132,4 +133,20 @@
   
   /*border: solid 1px black;*/
   background: url(../../images/post-order3.png) no-repeat;
+}
+
+.manageOrder{
+  position:absolute;
+  right:10px;
+  width:52px;
+  text-align: center;
+}
+.manageOrder .manage-img{
+  width:30px;
+  height:25px;
+}
+.manageOrder .manage-item{
+  background-color: #e5e5e5;
+  border:1px solid #ccc;
+  padding:3px 10px;
 }
