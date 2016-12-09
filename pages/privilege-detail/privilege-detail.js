@@ -28,7 +28,6 @@ Page({
         res[i].attributes.id = res[i].id ;
         res[i] = res[i].attributes;
       } 
-      console.log(res);
       that.setData({
           orders: res
         });  

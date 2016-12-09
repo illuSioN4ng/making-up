@@ -18,12 +18,10 @@ Page({
     });
   },
   onLoad: function (e) {
-    console.log(e.user)
     var that = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
       //更新数据
-      console.log(userInfo);
       that.setData({
         userInfo:userInfo
       });
@@ -66,7 +64,7 @@ Page({
       results = results.map((curvalue) => {
         return orderFormat.orderFormat(curvalue);
       });
-      console.log(results);
+    
       that.setData({
         orders: results
       });
@@ -75,15 +73,12 @@ Page({
     });
   },
   navToDetail: function(event) {
-    console.log(event);
     var objId = event.currentTarget.dataset.id;
-    console.log(objId);
     wx.navigateTo({
       url: '../detail/detail?objId=' + objId 
     });
   },
   manageOrder:function(e){
-    console.log(e.currentTarget.id)
     var that =this
     that.data.manage.display = !that.data.manage.display;
     that.data.manage.orderId = e.currentTarget.id;
@@ -97,7 +92,6 @@ Page({
     })
   },
   deleteOrder:function(e){
-    console.log(e.id);
   // var order = AV.Object.createWithoutData('orders', e.id)
   // order.destroy().then(function (success) {
   //   cossole.log(success)

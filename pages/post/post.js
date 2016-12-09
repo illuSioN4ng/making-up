@@ -16,14 +16,12 @@ Page({
       pictures: []
   },
   onLoad:function(options){
-      console.log(options)
     // 页面初始化 options为页面跳转所带来的参数
     var that = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
       //更新数据
       author = userInfo;
-      console.log(author);
       discountId = options.disId;
     });
   },
@@ -47,27 +45,19 @@ Page({
   contentEventFunc: function(e) {
       if(e.detail && e.detail.value) {
           content = e.detail.value;
-          console.log(content);
       }
   },
   descriptionEventFunc: function(e) {
       if(e.detail && e.detail.value) {
           description = e.detail.value;
-          console.log(description);
       }
   },
   activityUrlEventFunc: function(e) {
       if(e.detail && e.detail.value) {
           activityURL = e.detail.value;
-          console.log(description);
       }
   },
   formSubmit: function(e) {
-      console.log(title);
-      console.log(content);
-      console.log(description);
-      console.log(pictures);
-      console.log(activityURL);
       if(title === '') {
           wx.showToast({
             title: '标题为空',
@@ -106,7 +96,6 @@ Page({
 
           order.save().then(function (order) {
             // 成功保存之后，执行其他逻辑.
-            console.log(order);
             wx.navigateTo({
                 url: '../index/index'
             })
@@ -115,8 +104,6 @@ Page({
             console.log(error);
           });
       }
-      console.log(e);
-      console.log(e.detail.value);
   },  
   chooseImage: function() {
       //上传图片相关
@@ -128,7 +115,6 @@ Page({
           success: function (res) {
               // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
               let tempFilePaths = res.tempFilePaths;
-              console.log(tempFilePaths);
               tempFilePaths.forEach(function(url, index){
                 //   pictures.push(url);
                 //   that.setData({
@@ -144,11 +130,8 @@ Page({
                                 uri: localFile,  
                             }
                         });
-                        console.log(name);
                         image.save().then(function(file) {
                             // 文件保存成功
-                            console.log(file.url());
-                            console.log(file.url());
                             pictures.push(file.url());
                             that.setData({
                             pictures: pictures
