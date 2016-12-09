@@ -8,13 +8,15 @@ var author,
     content = '',
     description = '',
     pictures = [],
-    activityURL = "";
+    activityURL = "",
+    discountId = '';
 
 Page({
   data:{
       pictures: []
   },
   onLoad:function(options){
+      console.log(options)
     // 页面初始化 options为页面跳转所带来的参数
     var that = this
     //调用应用实例的方法获取全局数据
@@ -22,9 +24,7 @@ Page({
       //更新数据
       author = userInfo;
       console.log(author);
-    //   that.setData({
-    //     userInfo:userInfo
-    //   });
+      discountId = options.disId;
     });
   },
   onReady:function(){
@@ -93,6 +93,7 @@ Page({
           });
           return false;
       }else {
+
           var orderObj = AV.Object.extend('orders'),
             order = new orderObj();
           order.set('title', title);
@@ -101,6 +102,7 @@ Page({
           order.set('url', activityURL);
           order.set('author', author);
           order.set('pictures', pictures);
+          order.set('discountId', discountId);
 
           order.save().then(function (order) {
             // 成功保存之后，执行其他逻辑.
