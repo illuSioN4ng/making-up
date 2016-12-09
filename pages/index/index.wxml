@@ -7,11 +7,11 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>-->
-  <view class="location-info">
+  <view class="location-info" bindtap="chooseCircle">
     当前圈子：电子科技大学清水河校区
   </view>
 
-  <view bindtap="navToDetail" class="order-item" wx:for="{{orders}}" wx:key="id" data-id="{{ item.id }}">
+  <view class="order-item" wx:for="{{orders}}" wx:key="id" data-id="{{ item.id }}">
     <image class="author-avatar" src="{{ item.author.avatarUrl}}" background-size="cover"></image>
     <view class="author-info">
       <view class="author">{{ item.author.nickName}}</view>
@@ -23,7 +23,7 @@
         <view wx:if="{{manage.do}}"  wx:for="{{manage.do}}" wx:key="id" class="manage-item" catchtap="deleteOrder" id="{{manage.orderId}}">{{item}}</view>
       </view>      
     </view>
-    <view class="content-container">
+    <view class="content-container" bindtap="navToDetail" data-id="{{ item.id }}">
        <image class="content-picture" src="{{ item.pictures[0] }}" background-size="cover"></image>
        <view class="content-text">
           <view class="title">
@@ -36,8 +36,14 @@
         <view class="button">
           <view class="button-item thumbs-up">赞</view>
           <view class="button-item comment">评论</view>
-          <view class="button-item join">立即加入</view>
+          <view class="button-item join" data-qrcode="{{ item.QRCode }}" catchtap="QRCodeTap">立即加入</view>
         </view>
+    </view>
+  </view>
+  <view wx-if="{{ QRCodeShowFlag }}" class="QRCode-container" id="QRCode-container" catchtap="hideQRCode">
+    <view class="QRCode-box" id="QRCode-box">
+      长按识别二维码：
+      <image src="{{ QRCodeShow }}" class="QRCde-show"></image>
     </view>
   </view>
   <view class="post-button" bindtap="navToPost"></view>

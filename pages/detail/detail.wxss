@@ -29,13 +29,16 @@
 
 .order-title {
     font-weight: bold;
-    margin-bottom: 10rpx;
+    font-size: 18px;
+    margin: 40rpx 0;
 }
 
 .order-content {
-    height: 300rpx;
-    border: solid 1px #999;
+    /*height: 200rpx;*/
+    margin: 40rpx 0;
+    /*border: solid 1px #999;*/
     border-radius: 5px;
+    /*font-size: 15px;*/
     color: #666;
 }
 
@@ -55,7 +58,12 @@
     margin-left: 5rpx;
 }
 
+.order-comments {
+    margin-top: 60rpx;
+}
+
 .order-comment {
+    padding-bottom: 20rpx;
     margin: 25rpx 0 50rpx;
 }
 

@@ -2,27 +2,59 @@
     background-color: #ccc;
 }
 
-.my-info,.order-info,.other-info{
+.my-info, 
+.order-info, 
+.other-info{
     background-color:#fff;
     margin-top: 20rpx;
     font-size: 14px;
     line-height: 28px;
     padding:40rpx;
 }
+
 .my-info{
 
 }
+
 .my-img{
     width:100rpx;
     height:100rpx;
     background-color: #234290;
     border-radius: 20rpx;
-    display: inline-block;
     float: left;
     margin-right: 40rpx;
 }
 
+.my-name,
+.my-identification {
+    line-height: 50rpx;
+}
+
 .info-icon{
-     background: url(../../images/074-compass.png) no-repeat 0rpx 15rpx;
+     /*background: url(../../images/074-compass.png) no-repeat 0rpx 15rpx;*/
      padding-left:60rpx;
+}
+
+.order-start {
+    background: url(../../images/order-start.png) no-repeat 0rpx 15rpx;
+}
+
+.order-participate {
+    background: url(../../images/order-participate.png) no-repeat 0rpx 15rpx;
+}
+
+.order-identification {
+    background: url(../../images/order-identification.png) no-repeat 0rpx 15rpx;
+}
+
+.other-invite {
+    background: url(../../images/other-invite.png) no-repeat 0rpx 15rpx;
+}
+
+.other-use {
+    background: url(../../images/other-use.png) no-repeat 0rpx 15rpx;
+}
+
+.other-about {
+    background: url(../../images/other-about.png) no-repeat 0rpx 15rpx;
 }

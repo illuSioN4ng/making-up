@@ -18,6 +18,7 @@ function orderFormate(obj) {
     retObj.updatedAt = obj.updatedAt;
     retObj.createdAt = obj.createdAt;
     retObj.formatDate = util.formatTime(obj.updatedAt);
+    retObj.QRCode = obj.get('QRCode');
     return retObj;
 }
 

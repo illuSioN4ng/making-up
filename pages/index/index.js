@@ -9,7 +9,9 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     orders: [],
-    manage:{}
+    manage:{},
+    QRCodeShow: '',
+    QRCodeShowFlag: false
   },
   //事件处理函数
   navToPost: function() {
@@ -68,6 +70,7 @@ Page({
       that.setData({
         orders: results
       });
+      console.log(this.data.orders);
     }, function (error) {
       
     });
@@ -89,7 +92,7 @@ Page({
     }   
     that.setData({
       manage:that.data.manage
-    })
+    });
   },
   deleteOrder:function(e){
   // var order = AV.Object.createWithoutData('orders', e.id)
@@ -100,5 +103,35 @@ Page({
   //   cossole.log(error)
   //   // 删除失败
   // });
+  },
+  QRCodeTap: function(e) {
+    console.log(e);
+    this.setData({
+      QRCodeShow: e.target.dataset.qrcode,
+      QRCodeShowFlag: true
+    });
+  },
+  hideQRCode: function(e){
+    if(e.target.id === 'QRCode-container') {
+      this.setData({
+        QRCodeShow: '',
+        QRCodeShowFlag: false
+      });
+    }
+  },
+  chooseCircle: function(){
+    wx.getLocation({
+    type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+    success: function(res) {
+      console.log(res);
+      var latitude = res.latitude
+      var longitude = res.longitude
+      wx.openLocation({
+        latitude: latitude,
+        longitude: longitude,
+        scale: 28
+      })
+    }
+  })
   }
 })

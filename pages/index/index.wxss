@@ -79,6 +79,7 @@
   width: calc(100% - 230rpx);
   height: 192rpx;
   margin-left: 38rpx;
+  color: #666;
   overflow: hidden;
 }
 
@@ -125,7 +126,7 @@
 
 .post-button {
   position: fixed;
-  bottom: 200rpx;
+  bottom: 100rpx;
   right: 50rpx;
 
   width: 32px;
@@ -149,4 +150,31 @@
   background-color: #e5e5e5;
   border:1px solid #ccc;
   padding:3px 10px;
+}
+
+.QRCode-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.QRCode-container .QRCode-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 450rpx;
+  height: 500rpx;
+  transform: translate(-50%, -50%);
+  background-color: #f6f6f6;
+  padding: 20rpx;
+  font-size: 40rpx;
+  line-height: 50rpx;
+}
+
+.QRCde-show {
+  width: 450rpx;
+  height: 450rpx;
 }
