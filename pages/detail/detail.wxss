@@ -31,6 +31,7 @@
     font-weight: bold;
     font-size: 18px;
     margin: 40rpx 0;
+    color: #555;
 }
 
 .order-content {
@@ -89,20 +90,55 @@
     box-sizing: border-box;
     float: left;
     height: 100rpx;
-    width: 70%;
+    width: 50%;
     border-radius: 5px;
     padding-left: 20rpx;
     line-height: 100%;
     border: solid 1px #999;
 }
 
-.tool-bar .comment-submit {
+.tool-bar .comment-submit,
+.join-tool {
     float: left;
     height: 100rpx;
     font-size: 30rpx;
     line-height: 100rpx;
-    width: 25%;
+    width: 20%;
     margin-left: 5rpx;
     border-radius: 5px;
-    border: solid 1px #4eaa4c;
+    /*border: fid 1px #4eaa4c;*/
+}
+
+.join-tool {
+    margin-left: 30rpx;
+    text-align: center;
+    background-color: #ff4400;
+    color: #fff;
+}
+
+.QRCode-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.QRCode-container .QRCode-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 450rpx;
+  height: 500rpx;
+  transform: translate(-50%, -50%);
+  background-color: #f6f6f6;
+  padding: 20rpx;
+  font-size: 40rpx;
+  line-height: 50rpx;
+}
+
+.QRCde-show {
+  width: 450rpx;
+  height: 450rpx;
 }

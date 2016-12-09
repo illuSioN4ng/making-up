@@ -13,7 +13,9 @@ Page({
     userInfo: {},
     order: {},
     comments: [],
-    commentObj: {}
+    commentObj: {},
+    QRCodeShowFlag: false,
+    QRCodeShow: ''
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -74,5 +76,20 @@ Page({
     }, (error) => {
         throw error;
     });
+  },
+  showQRCode: function(e) {
+    console.log(e);
+    this.setData({
+      QRCodeShow: e.target.dataset.qrcode,
+      QRCodeShowFlag: true
+    });
+  },
+  hideQRCode: function(e){
+    if(e.target.id === 'QRCode-container') {
+      this.setData({
+        QRCodeShow: '',
+        QRCodeShowFlag: false
+      });
+    }
   }
 })
