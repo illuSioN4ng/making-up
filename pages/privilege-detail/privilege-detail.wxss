@@ -90,7 +90,7 @@
 }
 
 .privilege-praise{
-    background: url(../../images/219-heart.png) no-repeat 30rpx 25rpx;
+    background: url(data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA1UlEQVQ4T6VSARHDIAwEB5XQOZiEOegkVAIScAASWgeVMAebgyFhDtiHSziuW+lGueMSIP/3Ia/VwaVreGNMp7UenHPzVt0ewQjggn3x3lP8WHsEFkALJddWAgOgBwEpuP2lACALwARgQD4iTlUCFBkUdFz0YjBFhSePkHJeQQjTH5BEhAcuBbApWeqlpUxQ9ljrmQnS31BeKlBC8gNBnkorQbsCqDtDeS++EAU9X6ZZ11pYmyo7kcYI399jjCciww44P8vZ8xv9VfZE1crfjLO+O0zwBsubhBFPi6eAAAAAAElFTkSuQmCC) no-repeat 30rpx 20rpx;
     padding-left:80rpx;
     display: inline-block;
 
