@@ -1,9 +1,10 @@
 .privilege-item {
-  border:1px solid #000;
-  height:300rpx;
+  width: 750rpx;
+  height: 420rpx;
+  
+  margin: 10rpx 0;
+  border: solid #e5e5e5;
+  border-width: 1px 0;
+
   overflow: hidden;
-  background-color: #ffcc33;
-  font-size: 18px;
-  line-height: 300rpx;
-  text-align: center;
 }

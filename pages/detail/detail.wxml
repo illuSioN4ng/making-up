@@ -10,23 +10,26 @@
                 <view class="post-time">{{ order.formatDate}}</view>
             </view>
         </view>
-        <view class="order-title">
-            {{ order.title }}
-        </view>
-        <view class="order-content">
-            {{ order.content }}
-        </view>
-        <view class="order-description">
-            具体优惠形式：
-            {{ order.description }}
-        </view>
-        <view class="piuctures-container">
+        <view class="order-container">
+            <view class="order-title">
+                {{ order.title }}
+            </view>
+            <view class="order-content">
+                {{ order.content }}
+            </view>
+            <view class="order-description">
+                具体优惠形式：
+                {{ order.description }}
+            </view>
+            <view class="piuctures-container">
             <image class="content-picture" wx:for="{{ order.pictures }}" wx:key="{{ index }}" src="{{ item }}" background-size="cover"></image>            
+            </view>
+            <view class="order-description" wx:if="{{order.url != ''}}">
+                活动页面链接
+                <view>{{ order.url }}</view>
+            </view>
         </view>
-        <view class="order-description" wx:if="{{order.url != ''}}">
-            活动页面链接
-            <view>{{ order.url }}</view>
-        </view>
+        
         <view class="order-comments" wx:if="{{ order.comments && order.comments.length > 0 }}">
             评论
             <view class="order-comment" wx:for="{{ order.comments }}" wx:key="{{ index }}">

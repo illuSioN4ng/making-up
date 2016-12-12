@@ -2,16 +2,17 @@
 .container {
 
   /*box-model*/
-  /*height: 100%;*/
-  /*border: solid 1px black;*/
+  position:absolute;
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: flex-start;
-  /*padding: 200rpx 0;*/
   box-sizing: border-box;
+  padding-bottom: 60px;/*防止tabBar遮挡*/
 
-  margin-bottom: 60px;/*防止tabBar遮挡*/
+  background-color: #f2f2f2;
+  min-height: 100%;
+  width: 100%;
 
   /*typography*/
   font: 12px/150% arial,\5FAE\8F6F\96C5\9ED1,\5b8b\4f53;

@@ -19,6 +19,17 @@ Page({
     });
   },
   onLoad: function (e) {
+    wx.getSystemInfo({
+  success: function(res) {
+    console.log(res);
+    console.log(res.model)
+    console.log(res.pixelRatio)
+    console.log(res.windowWidth)
+    console.log(res.windowHeight)
+    console.log(res.language)
+    console.log(res.version)
+  }
+});
     var that = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){

@@ -1,5 +1,7 @@
 <view class="container">
-    <view wx:for="{{discount}}">
-        <view class="privilege-item" bindtap="seeDetail"  wx:key="id" data-id="{{item.id}}">{{item.title}}</view>
+    <view wx:for="{{discount}}" wx:key="{{ index }}">
+        <view bindtap="seeDetail" wx:key="id" data-id="{{item.id}}">
+            <image class="privilege-item" src="{{ item.background_url }}"></image>
+        </view>
     </view>
 </view>

@@ -1,4 +1,5 @@
 const AV = require('../../libs/av-weapp.js');
+var discountFormat = require('../../utils/discountFormat.js');
 
 Page({
   data:{
@@ -10,14 +11,20 @@ Page({
     var that = this;
     let disc = [];
     let discount = new AV.Query('discount');
-    discount.find().then(function (results) {
-      for (let i=0; i<results.length; i++){
-        results[i].attributes.id = results[i].id;
-        disc.push(results[i].attributes);
-      }
-      that.setData({
-        discount: disc
+    discount.descending('createdAt').find().then(function (results) {
+      console.log(results);
+      // for (let i=0; i<results.length; i++){
+      //   results[i].attributes.id = results[i].id;
+      //   disc.push(results[i].attributes);
+      // }
+      results = results.map((curvalue) => {
+        return discountFormat.discountFormat(curvalue);
       });
+      
+      that.setData({
+        discount: results
+      });
+
     });
     
   },

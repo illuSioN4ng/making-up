@@ -12,10 +12,12 @@ Page({
     let discount = new AV.Query('discount');   
     discount.equalTo('objectId', option.id);
     discount.find().then(function (results) {
-      detail.title = results[0].attributes.title;
-      detail.content = results[0].attributes.content;
-      detail.praise = results[0].attributes.praise;
+      detail.title = results[0].get('title');
+      detail.content = results[0].get('content');
+      detail.praise = results[0].get('praise');
       detail.id = results[0].id; 
+      detail.background_url = results[0].get('background_url');
+      console.log(detail);
       that.setData({
           discount: detail
         });

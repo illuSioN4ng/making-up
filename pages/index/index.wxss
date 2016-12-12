@@ -40,7 +40,7 @@
 }
 
 .order-item {
-  margin-bottom: 7px;
+  margin-bottom: 14rpx;
   padding: 15rpx;
   overflow: hidden;
   background-color: #fff;
@@ -114,7 +114,7 @@
 }
 
 .button-item.thumbs-up {
-  background: url(data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA1UlEQVQ4T6VSARHDIAwEB5XQOZiEOegkVAIScAASWgeVMAebgyFhDtiHSziuW+lGueMSIP/3Ia/VwaVreGNMp7UenHPzVt0ewQjggn3x3lP8WHsEFkALJddWAgOgBwEpuP2lACALwARgQD4iTlUCFBkUdFz0YjBFhSePkHJeQQjTH5BEhAcuBbApWeqlpUxQ9ljrmQnS31BeKlBC8gNBnkorQbsCqDtDeS++EAU9X6ZZ11pYmyo7kcYI399jjCciww44P8vZ8xv9VfZE1crfjLO+O0zwBsubhBFPi6eAAAAAAElFTkSuQmCC) no-repeat 30rpx 5px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA8klEQVQ4T62TzRGCMBCFdyPcLcESsAKxAzrQEhhIPHvWwGAFWoIdiB3QiZwFs7KjOP6gjmBOmd3Jt++9zCJ0PNjxPXwE+L7fR8saUVnukyTJm4Z9BARSbQEwRQInihbTVoBYL71AzuaxXsx/AoThzCMEhx9W981XBezXtu1BUfRyYZkJAA1NWUy5ZgjWBFjZuRxTHld1JrcMWOa9xHeSlVLOidCr+w8ALjJIgEm11mmTZymla0CwtYT7PwOeB7QAqC3/TK3uvwBC2iHhGIkORkD2kgFRH0EM7wO+Kbim61YBZlVI7psdyevwXiy0XarO23gGY3SSEYjrCf4AAAAASUVORK5CYII=) no-repeat 30rpx 5px;
 }
 
 .button-item.comment {
