@@ -8,7 +8,6 @@
   align-items: left;
   justify-content: flex-start;
   box-sizing: border-box;
-  padding-bottom: 60px;/*防止tabBar遮挡*/
 
   background-color: #f2f2f2;
   min-height: 100%;

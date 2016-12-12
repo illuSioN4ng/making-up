@@ -11,3 +11,23 @@
 3. bind/catch的区别（bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以阻止冒泡事件向上冒泡。）
 4. 页面data的获取：`this.data`即可，注意（this对象的指向）
 5. wx.redirectTo(OBJECT) bug 返回首页tabBar不显示
+6. 包裹层铺满屏幕的做法：
+    - 通用css中加上 其中page类似浏览器中的body或者html
+        ```
+        page {
+            width: 100%;
+            ming-height: 100%;
+        }
+        .container {
+            width: 100%;
+            min-height: 100%;
+        }
+        ```
+    - 通用css中只对container类进行处理
+        ```
+            .container {
+                position: absolute;
+                width: 100%;
+                min-height: 100%;
+            }
+        ```
