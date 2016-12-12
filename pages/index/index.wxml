@@ -42,7 +42,7 @@
   </view>
   <view wx-if="{{ QRCodeShowFlag }}" class="QRCode-container" id="QRCode-container" catchtap="hideQRCode">
     <view class="QRCode-box" id="QRCode-box">
-      长按识别二维码：
+      长按识别二维码加群
       <image src="{{ QRCodeShow }}" class="QRCde-show"></image>
     </view>
   </view>
