@@ -1,5 +1,5 @@
 .container{
-    background-color: #ccc;
+ background-color: #f2f2f2;
 }
 
 .my-info,.order-info,.other-info{
@@ -7,15 +7,24 @@
     margin-top: 20rpx;
     font-size: 14px;
     line-height: 28px;
-    padding:40rpx;
+    padding:50rpx;
 }
-.my-info{
+.no-now{
+    color: #ddd;
+}
 
+.my-info{
+    height:100rpx;
+}
+
+.my-name{
+    font-size: 16px;
+    color:#708090;
+    height: 55%;
 }
 .my-img{
     width:100rpx;
     height:100rpx;
-    background-color: #234290;
     border-radius: 20rpx;
     display: inline-block;
     float: left;

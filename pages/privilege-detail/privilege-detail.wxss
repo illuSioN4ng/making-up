@@ -1,6 +1,6 @@
 /* pages/privilege-detail/privilege-detail.wxss */
 .container{
-    background-color: #ccc;
+    background-color: #f2f2f2;
 }
 
 .privilege-title{
@@ -13,9 +13,11 @@
 }
 
 .privilege-info{
-    margin-bottom: 20rpx;
+    margin-bottom: 7px;
     background-color: #fff;
     padding: 20rpx 10rpx;
+    border: solid #e5e5e5;
+    border-width: 1px 0;
 }
 
 .info-summary{
@@ -30,6 +32,9 @@
 .orders-info{
     background-color: #fff;
     padding:20rpx;
+    border: solid #e5e5e5;
+    border-width: 1px 0;
+    margin-bottom: 7px;
 }
 
 .orders-info-title{
@@ -78,20 +83,25 @@
     background-color: #999;
 }
 
+.no-orders{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
 
 .privilege-join{
     position: fixed;
     bottom: 0;
-    height:80rpx;
+    height:100rpx;
     width: 100%;
-    line-height: 80rpx;
-    border:1px solid #000;
-    background-color: #fff;
+    line-height: 100rpx;
+    background-color: #f6f6f8;
 }
 
 .privilege-praise{
-    background: url(../../images/219-heart.png) no-repeat 30rpx 25rpx;
-    padding-left:80rpx;
+    background: url(../../images/thumbs-up.png) no-repeat 30rpx 30rpx;
+    padding :0 80rpx;
     display: inline-block;
 
 }

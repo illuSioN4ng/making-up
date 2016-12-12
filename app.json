@@ -6,6 +6,7 @@
     "pages/privilege-list/privilege-list",
     "pages/privilege-detail/privilege-detail",
     "pages/personal-information/personal-information",
+    "pages/identity/identity",
     "pages/logs/logs"
   ],
   "window":{

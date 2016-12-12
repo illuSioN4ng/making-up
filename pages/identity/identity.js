@@ -1,20 +1,15 @@
-// pages/detail/detail.js
 //获取应用实例
 var app = getApp();
 //查询用户信息
 const AV = require('../../libs/av-weapp.js');
-var author,
-    title = '',
-    content = '',
-    description = '',
-    pictures = [],
-    activityURL = "",
-    discountId = '',
-    discount ={};
-
+var phone = '',
+    name = '',
+    school = '',
+    num = '',
+    pictures = [];
 Page({
   data:{
-      pictures: []
+    pictures: []
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -22,29 +17,10 @@ Page({
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
       //更新数据
-      author = userInfo;
-      console.log(author);
-      
-      if (options.disId){
-            discountId = options.disId;
-            let detail = {};
-            let discount = new AV.Query('discount');   
-            discount.equalTo('objectId', discountId);
-            discount.find().then(function (results) {
-                console.log(results);
-            detail.content = results[0].attributes.content;
-            detail.disForm = results[0].attributes.disForm;
-            detail.img = results[0].attributes.background_url;
-            title = detail.content.summary;
-            content = detail.content.detail.join('');
-            description = detail.disForm;
-            pictures = [detail.img];
-            that.setData({
-                discount: detail
-                });
-            });
-      }
-          
+      console.log(userInfo);
+      that.setData({
+        userInfo:userInfo
+      });
     });
   },
   onReady:function(){
@@ -59,75 +35,78 @@ Page({
   onUnload:function(){
     // 页面关闭
   },
-  titleEventFunc: function(e) {
+  phoneEventFunc: function(e) {
       console.log(e)
       if(e.detail && e.detail.value) {
-          title = e.detail.value;
+          phone = e.detail.value;
       }
   },
-  contentEventFunc: function(e) {
+  nameEventFunc: function(e) {
       if(e.detail && e.detail.value) {
-          content = e.detail.value;
+          name = e.detail.value;
           console.log(content);
       }
   },
-  descriptionEventFunc: function(e) {
+  schoolEventFunc: function(e) {
       if(e.detail && e.detail.value) {
-          description = e.detail.value;
-          console.log(description);
+          school = e.detail.value;
+          console.log(school);
       }
   },
-  activityUrlEventFunc: function(e) {
+  numberEventFunc: function(e) {
       if(e.detail && e.detail.value) {
-          activityURL = e.detail.value;
+          num = e.detail.value;
           console.log(description);
       }
   },
   formSubmit: function(e) {
-      console.log(title);
-      console.log(content);
-      console.log(description);
-      console.log(pictures);
-      console.log(activityURL);
-      if(title === '') {
+      console.log(phone);
+      console.log(name);
+      console.log(school);
+      console.log(num);
+      if(phone === '') {
           wx.showToast({
-            title: '标题为空',
+            title: '电话为空',
             duration: 2000
           });
           return false;
-      }else if(content === ''){
+      }else if(name === ''){
           wx.showToast({
-            title: '内容为空',
+            title: '姓名为空',
             duration: 2000
           });
           return false;
-      }else if(description === ''){
+      }else if(school === ''){
           wx.showToast({
-            title: '优惠形式为空',
+            title: '所在学校为空',
+            duration: 2000
+          });
+          return false;
+      }else if(num === 0){
+           wx.showToast({
+            title: '学号/教职工编号为空',
             duration: 2000
           });
           return false;
       }else if(pictures.length === 0){
            wx.showToast({
-            title: '图片信息为空',
+            title: '图片为空',
             duration: 2000
           });
           return false;
       }else {
 
-          var orderObj = AV.Object.extend('orders'),
-            order = new orderObj();
-          order.set('title', title);
-          order.set('content', content);
-          order.set('description', description);
-          order.set('url', activityURL);
-          order.set('author', author);
-          order.set('pictures', pictures);
-          order.set('discountId', discountId);
+          var identity = AV.Object.extend('identity'),
+          ident = new identity();
+          ident.set('phone', phone);
+          ident.set('name', name);
+          ident.set('school', school);
+          ident.set('num', num);
+          ident.set('pictures', pictures);
 
-          order.save().then(function (order) {
+          ident.save().then(function (ident) {
             // 成功保存之后，执行其他逻辑.
-            console.log(order);
+            console.log(ident);
             wx.navigateTo({
                 url: '../index/index'
             })
@@ -136,8 +115,6 @@ Page({
             console.log(error);
           });
       }
-      console.log(e);
-      console.log(e.detail.value);
   },  
   chooseImage: function() {
       //上传图片相关
