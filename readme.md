@@ -6,7 +6,7 @@
 &emsp;前端选择是微信小程序，后端是[leanCloud](https://leancloud.cn/)。
 ### 功能点及完成情况概述
 | 功能点 | 重要程度 | 描述 | 完成情况 |
-| :---: |:---:| --- |---|
+| --- | --- | --- |---|
 | 浏览拼单feed流 | ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) | 首页下滑浏览拼单feed流；<br/>下拉加载更多信息 | 基本完成；<br/>补充：下拉刷新暂未做，暂时未开发API； |
 | 查看拼单详情 | ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) | 拼单feed流点击进去可查看拼单详情； | 基本完成； |
 | 发起拼单（用户侧） | ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) | 用户发起拼单的入口：<br/>①首页红色“＋”号；<br/>②优惠信息界面，查看优惠信息时，发起拼单； | 完成；<br/>补充：由②入口进入时，自动填充相关拼单信息； |
