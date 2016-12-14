@@ -17,8 +17,7 @@
 | 我的界面 | ![star](./pictures/star.png) ![star](./pictures/star.png) | 个人基本信息及行为查看、软件相关设置等 | 完成身份验证效果展示；其他灰色部分暂时未做； |
 | 删除自己已发起的拼单 | ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) | 拼单具有时效性，支持用户设置拼单自动过期时间或手动删除拼单； | 暂时未做； |
 | 评论 | ![star](./pictures/star.png) ![star](./pictures/star.png) | 便于互动交流； | 完成 |
-| 分享 | ![star](./pictures/star.png) ![star](./pictures/star.png) | 一键分享拼单给好友/到朋友圈，呼朋唤友一起拼单； | 暂时未做；
-补充：暂时未开放API |
+| 分享 | ![star](./pictures/star.png) ![star](./pictures/star.png) | 一键分享拼单给好友/到朋友圈，呼朋唤友一起拼单； | 暂时未做；补充：暂时未开放API |
 | 点赞 | ![star](./pictures/star.png) | 为平台筛选优质拼单的一个维度 | 展示效果完成，后续步骤暂时未做； |
 | 用户系统 | ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) | 存储用户信息及相关行为，关联用户身份认证结果； | 暂时未做；
 补充：未注册账号无权限； |
