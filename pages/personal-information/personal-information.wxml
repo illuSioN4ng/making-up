@@ -2,16 +2,16 @@
     <view class="my-info">
         <image class="my-img" src="{{userInfo.avatarUrl}}"></image>
         <view class="my-name">{{userInfo.nickName}}</view>
-        <view class="my-identification">已认证</view>
+        <view class="my-identification">未认证</view>
     </view>
     <view class="order-info">
         <view class="info-icon order-start" bindtap="myOrders">我发起的凑单</view>
-        <view class="info-icon order-participate">我参与的订单</view>
-        <view class="info-icon order-identification">校园身份认证</view>
+        <view class="info-icon order-participate no-now">我参与的订单</view>
+        <view class="info-icon order-identification" bindtap="myIdenti">校园身份认证</view>
     </view>
     <view class="other-info">
-        <view class="info-icon other-invite">邀请好友</view>
-        <view class="info-icon other-use">使用须知</view>
-        <view class="info-icon other-about">关于</view>
+        <view class="info-icon other-invite no-now">邀请好友</view>
+        <view class="info-icon other-use no-now">使用须知</view>
+        <view class="info-icon other-about no-now">关于</view>
     </view>
 </view>

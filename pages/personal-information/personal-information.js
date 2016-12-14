@@ -35,5 +35,19 @@ Page({
     wx.navigateTo({
       url: '../index/index?user='+this.data.userInfo.nickName
     })    
+  },
+  myIdenti:function(){
+    wx.showModal({
+    content: '您还没有完成校园身份认证哦！',
+    cancelText: '暂时不要',
+    confirmText: '立即认证',
+    success: function(res) {
+      if (res.confirm) {
+        wx.navigateTo({
+          url: '../identity/identity'
+        })
+      }
+    }
+  })
   }
 })

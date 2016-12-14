@@ -29,7 +29,7 @@ Page({
       for(let i=0;i<res.length;i++){
         res[i].attributes.id = res[i].id ;
         res[i] = res[i].attributes;
-      } 
+      }
       that.setData({
           orders: res
         });  

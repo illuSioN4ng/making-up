@@ -4,8 +4,6 @@ var app = getApp();
 //查询用户信息
 const AV = require('../../libs/av-weapp.js');
 
-var pictures = [];
-
 Page({
   data:{
       pictures: [],
@@ -26,6 +24,26 @@ Page({
       //更新数据
       that.data.author = userInfo;
       that.data.discountId = options.disId;
+      
+      if (options.disId){
+            discountId = options.disId;
+            let detail = {};
+            let discount = new AV.Query('discount');   
+            discount.equalTo('objectId', discountId);
+            discount.find().then(function (results) {
+                console.log(results);
+            detail.content = results[0].attributes.content;
+            detail.disForm = results[0].attributes.disForm;
+            detail.img = results[0].attributes.background_url;
+            that.data.title = detail.content.summary;
+            that.data.content = detail.content.detail.join('');
+            that.data.contentdescription = detail.disForm;
+            that.data.contentpictures = [detail.img];
+            that.setData({
+                discount: detail
+                });
+            });
+      }
     });
   },
   onReady:function(){
@@ -41,6 +59,7 @@ Page({
     // 页面关闭
   },
   titleEventFunc: function(e) {
+      console.log(e)
       if(e.detail && e.detail.value) {
           this.data.title = e.detail.value;
       }

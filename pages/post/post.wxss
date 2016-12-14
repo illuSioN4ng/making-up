@@ -30,6 +30,10 @@
     
 }
 
+.dis-img{
+    width:100%;
+}
+
 .post-container .image-add-button {
     line-height: 230rpx;
     text-align: center;
