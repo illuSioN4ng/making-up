@@ -71,7 +71,7 @@
 }
 
 .order-item-name{
-    width: 80rpx;
+    width: 140rpx;
     line-height: 64rpx;
     text-align: left;
     margin-left: 30rpx;
