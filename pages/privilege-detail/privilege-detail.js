@@ -1,11 +1,26 @@
 // pages/privilege-detail/privilege-detail.js
 const AV = require('../../libs/av-weapp.js');
+function ordersRefresh(that, option) {
+  let order = new AV.Query('orders');
+    order.equalTo('discountId', option.id);
+    order.find().then(function (res){ 
+      for(let i=0;i<res.length;i++){
+        res[i].attributes.id = res[i].id ;
+        res[i] = res[i].attributes;
+      }
+      that.setData({
+        orders: res
+      });  
+    }); 
+}
 Page({
   data:{
     discount:{},
-    orders:[]
+    orders:[],
+    option: {}
   },
   onLoad:function(option){
+    this.data.option = option;
     // 页面初始化 options为页面跳转所带来的参数
     var that = this;
     let detail = {};
@@ -17,29 +32,21 @@ Page({
       detail.praise = results[0].get('praise');
       detail.id = results[0].id; 
       detail.background_url = results[0].get('background_url');
-      console.log(detail);
+      
       that.setData({
           discount: detail
         });
     });
 
-    let order = new AV.Query('orders');
-    order.equalTo('discountId', option.id);
-    order.find().then(function (res){ 
-      for(let i=0;i<res.length;i++){
-        res[i].attributes.id = res[i].id ;
-        res[i] = res[i].attributes;
-      }
-      that.setData({
-          orders: res
-        });  
-    });       
+    ordersRefresh(that, option);
+          
   },
   onReady:function(){
     // 页面渲染完成
   },
   onShow:function(){
     // 页面显示
+    ordersRefresh(this, this.data.option);
   },
   onHide:function(){
     // 页面隐藏
