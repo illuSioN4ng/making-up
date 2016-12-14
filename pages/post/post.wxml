@@ -25,10 +25,11 @@
             添加照片信息
         </view>
         <view class="images-container">
-            <image wx:if="{{discount.img}}" src="{{discount.img}}" class="dis-img"></image>
-            <image wx:for="{{ pictures }}" src="{{ item }}" wx:key="{{ index }}"></image>
-            <view wx:if="{{pictures.length < 3}}" id="addImageButton" class="image-add-button form-common-style" bindtap="chooseImage">
+            <!--<image wx:if="{{discount.img}}" src="{{discount.img}}" class="image-item"></image>-->
+            <image wx:for="{{ pictures }}" src="{{ item }}" wx:key="{{ index }}" class="image-item"></image>
+            <view wx:if="{{pictures.length < 3}}" id="addImageButton" class="image-add-button form-common-style image-item" bindtap="chooseImage">
                 +
+            </view>
         </view>
         <view class="label">
             活动页面链接

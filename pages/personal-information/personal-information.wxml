@@ -5,8 +5,8 @@
         <view class="my-identification">未认证</view>
     </view>
     <view class="order-info">
-        <view class="info-icon order-start" bindtap="myOrders">我发起的凑单</view>
-        <view class="info-icon order-participate no-now">我参与的订单</view>
+        <view class="info-icon order-start no-now">我发起的拼单</view>
+        <view class="info-icon order-participate no-now">我参与的拼单</view>
         <view class="info-icon order-identification" bindtap="myIdenti">校园身份认证</view>
     </view>
     <view class="other-info">

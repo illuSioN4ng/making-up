@@ -9,7 +9,7 @@
         </view>
     </view>
     <view class="orders-info" wx:if="{{ orders.length > 0 }}">
-        <view class="orders-info-title">已发起的凑单活动</view>
+        <view class="orders-info-title">已发起的拼单活动</view>
         <view wx:if="{{orders.length<=0}}" class="no-orders">暂无凑单哦~赶快立即发起抢占沙发！</view>
         <view class="orders-info-item"  wx:for="{{orders}}" wx:key="id">
             <image class="order-item-img" src="{{item.author.avatarUrl}}"></image>

@@ -3,6 +3,7 @@
 var app = getApp();
 //查询用户信息
 const AV = require('../../libs/av-weapp.js');
+var pictures = [];
 
 Page({
   data:{
@@ -17,7 +18,9 @@ Page({
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
-    this.data.pictures = [];//防止缓存影响
+    this.data.pictures = [];
+    pictures = [];//防止缓存影响
+    console.log("=======", this.data.pictures);
     var that = this;
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
@@ -26,23 +29,27 @@ Page({
       that.data.discountId = options.disId;
       
       if (options.disId){
-            discountId = options.disId;
-            let detail = {};
-            let discount = new AV.Query('discount');   
-            discount.equalTo('objectId', discountId);
-            discount.find().then(function (results) {
-                console.log(results);
+        console.log(options);
+        let detail = {};
+        let discount = new AV.Query('discount');   
+        discount.equalTo('objectId', that.data.discountId);
+        discount.find().then(function (results) {
+            console.log(results);
             detail.content = results[0].attributes.content;
             detail.disForm = results[0].attributes.disForm;
-            detail.img = results[0].attributes.background_url;
+            // detail.img = results[0].attributes.background_url;
+            pictures.push(results[0].get('background_url'));
+            console.log("=======", pictures);
             that.data.title = detail.content.summary;
             that.data.content = detail.content.detail.join('');
-            that.data.contentdescription = detail.disForm;
-            that.data.contentpictures = [detail.img];
+            that.data.description = detail.disForm;
+            // that.data.contentpictures = [detail.img];
             that.setData({
-                discount: detail
-                });
+                discount: detail,
+                pictures: pictures
             });
+            console.log(that.data);
+        });
       }
     });
   },
@@ -188,6 +195,7 @@ Page({
           success: function (res) {
               // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
               let tempFilePaths = res.tempFilePaths;
+              console.log(tempFilePaths);
               tempFilePaths.forEach(function(url, index){
                 //   pictures.push(url);
                 //   that.setData({
@@ -205,6 +213,7 @@ Page({
                         });
                         image.save().then(function(file) {
                             // 文件保存成功
+                            console.log(file);
                             pictures.push(file.url());
                             that.setData({
                                 pictures: pictures

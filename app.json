@@ -12,7 +12,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#38373d",
-    "navigationBarTitleText": "拼单",
+    "navigationBarTitleText": "拼单神器",
     "navigationBarTextStyle":"white"
   },
   "tabBar": {

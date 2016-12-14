@@ -36,6 +36,7 @@
     text-indent: 20rpx;
 }
 .orders-info{
+    margin-bottom: 80rpx;
     background-color: #fff;
     padding:10rpx 0;
 }
@@ -104,18 +105,20 @@
 .privilege-join{
     position: fixed;
     bottom: 0;
-    height:100rpx;
+    left: 0;
+    right: 0;
+    height:80rpx;
     line-height: 80rpx;
-    /*border:1px solid #000;*/
     background-color: #f2f2f2;
     border-top: solid 2rpx #e5e5e5;
+    vertical-align: middle;
+    overflow: hidden;
 }
 
 .privilege-praise{
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA8klEQVQ4T62TzRGCMBCFdyPcLcESsAKxAzrQEhhIPHvWwGAFWoIdiB3QiZwFs7KjOP6gjmBOmd3Jt++9zCJ0PNjxPXwE+L7fR8saUVnukyTJm4Z9BARSbQEwRQInihbTVoBYL71AzuaxXsx/AoThzCMEhx9W981XBezXtu1BUfRyYZkJAA1NWUy5ZgjWBFjZuRxTHld1JrcMWOa9xHeSlVLOidCr+w8ALjJIgEm11mmTZymla0CwtYT7PwOeB7QAqC3/TK3uvwBC2iHhGIkORkD2kgFRH0EM7wO+Kbim61YBZlVI7psdyevwXiy0XarO23gGY3SSEYjrCf4AAAAASUVORK5CYII=) no-repeat 30rpx 20rpx;
     padding-left:80rpx;
-    display: inline-block;
-
+    float: left;
 }
 
 .join{

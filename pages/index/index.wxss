@@ -84,15 +84,24 @@
 }
 
 .content-text .title {
-  height: 60rpx;
-  line-height: 60rpx;
+  height: 50rpx;
+  line-height: 50rpx;
   margin-bottom: 22rpx;
 
   font-size: 40rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 
 .content-text .content {
-  height: 140rpx;
+  height: 120rpx;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 .content-container .button {
