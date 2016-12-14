@@ -1,0 +1,38 @@
+<form bindsubmit="formSubmit">
+    <view class="identity-container">
+        <view class="label title">
+            学生教职工认证
+        </view>
+        <view class="label sub-title">
+            为保证凑单购买付费环节的可靠性，需要您实名认证
+        </view>
+        <view class="label">
+           请输入手机号
+        </view>
+        <input bindinput="phoneEventFunc" id="phone" class="form-common-style" auto-focus />
+        <view class="label">
+           姓名
+        </view>
+         <input bindinput="nameEventFunc" id="name" class="form-common-style" auto-focus/>
+        <view class="label">
+           所在学校
+        </view>
+        <input bindinput="schoolEventFunc" id="school" class="form-common-style" placeholder="电子科技大学" auto-focus/>
+        <view class="label">
+           学号/教职工编号
+        </view>
+        <input bindinput="numberEventFunc" id="number" class="form-common-style" auto-focus />
+        <view class="label">
+            添加照片信息
+        </view>
+        <image wx:for="{{ pictures }}" src="{{ item }}" wx:key="{{ index }}"></image>
+        <view id="addImageButton" class="image-add-button form-common-style" bindtap="chooseImage">
+            + 
+            <view class="label img-inner">
+            上传学生证或教职工证件正面照
+            </view>
+        </view>
+
+        <button formType="submit" type="primary" class="submit form-common-style"> 认证 </button>
+    </view>
+</form>

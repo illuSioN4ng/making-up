@@ -1,5 +1,4 @@
 /* pages/privilege-detail/privilege-detail.wxss */
-
 .orders-info,
 .privilege-info {
     margin-bottom: 14rpx;
@@ -17,8 +16,11 @@
 }
 
 .privilege-info{
+    margin-bottom: 7px;
     background-color: #fff;
     padding: 20rpx 10rpx;
+    border: solid #e5e5e5;
+    border-width: 1px 0;
 }
 
 .info-summary{
@@ -92,12 +94,17 @@
     background-color: #999;
 }
 
+.no-orders{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
 
 .privilege-join{
     position: fixed;
     bottom: 0;
-    height:80rpx;
-    width: 100%;
+    height:100rpx;
     line-height: 80rpx;
     /*border:1px solid #000;*/
     background-color: #f2f2f2;

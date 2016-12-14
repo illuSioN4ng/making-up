@@ -1,6 +1,10 @@
-.my-info, 
+.my-info,
 .order-info, 
-.other-info{
+.other-info
+ background-color: #f2f2f2;
+}
+
+.my-info,.order-info,.other-info{
     background-color:#fff;
     margin-top: 20rpx;
     font-size: 14px;
@@ -12,11 +16,23 @@
 .my-info{
     padding:40rpx;
 }
+.no-now{
+    color: #ddd;
+}
+
+.my-info{
+    height:100rpx;
+}
+
+.my-name{
+    font-size: 16px;
+    color:#708090;
+    height: 55%;
+}
 
 .my-img{
     width:100rpx;
     height:100rpx;
-    background-color: #234290;
     border-radius: 20rpx;
     float: left;
     margin-right: 20rpx;

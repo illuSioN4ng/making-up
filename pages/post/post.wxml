@@ -3,15 +3,15 @@
         <view class="label">
             标题
         </view>
-        <input bindinput="titleEventFunc" id="title" class="title form-common-style" placeholder="示例：京东洗护199-100求拼单" auto-focus/>
+        <input bindinput="titleEventFunc" id="title" class="title form-common-style" placeholder="示例：京东洗护199-100求拼单" auto-focus value="{{discount.content.summary || ''}}"/>
         <view class="label">
             内容
         </view>
-        <textarea bindblur="contentEventFunc" id="content" class="content form-common-style" maxlength="150" placeholder="示例：已选16元商品，还差4元，小伙伴们快来凑单！！" />
+        <textarea bindblur="contentEventFunc" id="content" class="content form-common-style" maxlength="150" placeholder="示例：已选16元商品，还差4元，小伙伴们快来凑单！！" value="{{discount.content.detail || ''}}"/>
         <view class="label">
             具体优惠形式
         </view>
-        <input bindinput="descriptionEventFunc" id="description" class="description form-common-style" placeholder="示例：199-100；满20起送等" auto-focus/>
+        <input bindinput="descriptionEventFunc" id="description" class="description form-common-style" placeholder="示例：199-100；满20起送等" value="{{discount.disForm || ''}}" auto-focus/>
         <view class="label">
             添加群二维码
         </view>
@@ -25,10 +25,10 @@
             添加照片信息
         </view>
         <view class="images-container">
-            <image wx:for="{{ pictures }}" src="{{ item }}" wx:key="{{ index }}" class="image-item"></image>
-            <view wx:if="{{ pictures.length < 3 }}" id="addImageButton" class="image-add-button form-common-style image-item" bindtap="chooseImage">
+            <image wx:if="{{discount.img}}" src="{{discount.img}}" class="dis-img"></image>
+            <image wx:for="{{ pictures }}" src="{{ item }}" wx:key="{{ index }}"></image>
+            <view wx:if="{{pictures.length < 3}}" id="addImageButton" class="image-add-button form-common-style" bindtap="chooseImage">
                 +
-            </view>
         </view>
         <view class="label">
             活动页面链接
