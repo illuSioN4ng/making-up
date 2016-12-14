@@ -53,7 +53,7 @@
 .orders-info-item{
     border-bottom: solid 2rpx #e5e5e5;
     margin-bottom: 5px;
-    padding:10rpx 20rpx;
+    padding:10rpx 40rpx;
     font-size: 14px;
     overflow: hidden;
 }

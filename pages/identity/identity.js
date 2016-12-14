@@ -12,8 +12,9 @@ Page({
     pictures: []
   },
   onLoad:function(options){
+      pictures = [];
     // 页面初始化 options为页面跳转所带来的参数
-    var that = this
+    var that = this;
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
       //更新数据
@@ -36,7 +37,6 @@ Page({
     // 页面关闭
   },
   phoneEventFunc: function(e) {
-      console.log(e)
       if(e.detail && e.detail.value) {
           phone = e.detail.value;
       }
@@ -44,26 +44,19 @@ Page({
   nameEventFunc: function(e) {
       if(e.detail && e.detail.value) {
           name = e.detail.value;
-          console.log(content);
       }
   },
   schoolEventFunc: function(e) {
       if(e.detail && e.detail.value) {
           school = e.detail.value;
-          console.log(school);
       }
   },
   numberEventFunc: function(e) {
       if(e.detail && e.detail.value) {
           num = e.detail.value;
-          console.log(description);
       }
   },
   formSubmit: function(e) {
-      console.log(phone);
-      console.log(name);
-      console.log(school);
-      console.log(num);
       if(phone === '') {
           wx.showToast({
             title: '电话为空',
@@ -106,10 +99,10 @@ Page({
 
           ident.save().then(function (ident) {
             // 成功保存之后，执行其他逻辑.
-            console.log(ident);
-            wx.navigateTo({
-                url: '../index/index'
-            })
+            wx.navigateBack();
+            // wx.navigateTo({
+            //     url: '../index/index'
+            // });
           }, function (error) {
             // 异常处理
             console.log(error);
@@ -145,8 +138,7 @@ Page({
                         console.log(name);
                         image.save().then(function(file) {
                             // 文件保存成功
-                            console.log(file.url());
-                            console.log(file.url());
+                            pictures = [];
                             pictures.push(file.url());
                             that.setData({
                             pictures: pictures

@@ -21,7 +21,7 @@
     "selectedColor": "#e12c15",
     "list": [{
       "pagePath": "pages/index/index",
-      "text": "凑单",
+      "text": "拼单",
       "iconPath": "images/order.png",
       "selectedIconPath": "images/order-active.png"
     },{

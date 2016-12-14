@@ -12,7 +12,7 @@ Page({
     let disc = [];
     let discount = new AV.Query('discount');
     discount.descending('createdAt').find().then(function (results) {
-      console.log(results);
+      
       // for (let i=0; i<results.length; i++){
       //   results[i].attributes.id = results[i].id;
       //   disc.push(results[i].attributes);
