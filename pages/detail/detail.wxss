@@ -65,6 +65,7 @@
 }
 
 .order-comments {
+    margin-bottom: 120rpx;
 }
 
 .order-comment {
