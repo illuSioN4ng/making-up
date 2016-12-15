@@ -1,8 +1,10 @@
 //app.js
 //初始化leancloud服务
 const AV = require('./libs/av-weapp.js');
+let {WeToast} = require('./libs/wetoast/wetoast.js');
 
 App({
+  WeToast,
   onLaunch: function () {
     AV.init({ 
       appId: 'DshsfhQRaevm0oRTrm36Ix3u-gzGzoHsz', 

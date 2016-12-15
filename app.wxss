@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import "libs/wetoast/wetoast.wxss";
 .container {
 
   /*box-model*/

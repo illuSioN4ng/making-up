@@ -10,7 +10,7 @@
 | 浏览拼单feed流 | ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) | 首页下滑浏览拼单feed流；<br/>下拉加载更多信息 | 基本完成；<br/>补充：下拉刷新暂未做，暂时未开发API； |
 | 查看拼单详情 | ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) | 拼单feed流点击进去可查看拼单详情； | 基本完成； |
 | 发起拼单（用户侧） | ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) | 用户发起拼单的入口：<br/>①首页红色“＋”号；<br/>②优惠信息界面，查看优惠信息时，发起拼单； | 完成；<br/>补充：由②入口进入时，自动填充相关拼单信息； |
-| “立即加入”拼单 | ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) | 点击“立即加入”按钮，弹出该拼单的群聊二维码，长按识别二维码加群； | 完成；<br/>补充：暂时不可识别二维码<br/>原因：微信小程序图片是使用background-image，和H5 image标签不同，不支持点击事件，页不能触发微信中的长按识别二维码 |
+| “立即加入”拼单 | ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) | 点击“立即加入”按钮，弹出该拼单的群聊二维码，长按识别二维码加群； | 完成；<br/>补充：暂时不可识别二维码<br/>原因：微信小程序图片是使用background-image，和H5 image标签不同，不支持点击事件，也不能触发微信中的长按识别二维码 |
 | 校园身份验证 | ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) | 由于凑单的后期涉及付款、收货等行为，需要在高素质高信用群体才能更容易建立起彼此的信任关系，最终完成凑单环节，故需要进行师生身份验证环节。规定：只有进行过身份验证的用户具有发布拼单、立即加入拼单的权限。 | 在“我的”界面中展示效果完成；<br/>补充：由于缺乏用户系统暂时未关联权限逻辑。 |
 | 拼单圈子选择 | ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) | 基于地理位置完成拼单流程，需首先定位； | 调用地图API，暂未做后续步骤； |
 | 发起优惠信息（平台侧） | ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) ![star](./pictures/star.png) | 平台侧筛选优质可拼单活动供用户选择；<br/>未来该板块可以设计更多的商业合作； | 展示效果完成，暂时未做后台发布系统； |

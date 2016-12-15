@@ -4,6 +4,7 @@ var app = getApp();
 //查询用户信息
 const AV = require('../../libs/av-weapp.js');
 var orderFormat = require('../../utils/orderFormat.js');
+
 function orderRefresh(e, that) {
 //查询多个数据，即首页数据列表查询
   var orders = new AV.Query('orders');
@@ -101,16 +102,19 @@ Page({
   },
   chooseCircle: function(){
     wx.getLocation({
-    type: 'gcj02', //返回可以用于wx.openLocation的经纬度
-    success: function(res) {
-      var latitude = res.latitude
-      var longitude = res.longitude
-      wx.openLocation({
-        latitude: latitude,
-        longitude: longitude,
-        scale: 28
-      })
-    }
-  })
+      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+      success: function(res) {
+        var latitude = res.latitude
+        var longitude = res.longitude
+        wx.openLocation({
+          latitude: latitude,
+          longitude: longitude,
+          scale: 28
+        });
+      },
+      fail: function(e) {
+        console.log(e);
+      }
+    });
   }
 })

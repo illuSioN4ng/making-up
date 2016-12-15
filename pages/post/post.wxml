@@ -1,11 +1,13 @@
+<import src="../../libs/wetoast/wetoast.wxml"/>
+
 <form bindsubmit="formSubmit">
     <view class="post-container">
         <view class="label">
-            标题
+            标题 <span class='red-star'>*</span>
         </view>
         <input bindinput="titleEventFunc" id="title" class="title form-common-style" placeholder="示例：京东洗护199-100求拼单" auto-focus value="{{discount.content.summary || ''}}"/>
         <view class="label">
-            内容
+            内容  <span class='red-star'>*</span>
         </view>
         <textarea bindblur="contentEventFunc" id="content" class="content form-common-style" maxlength="150" placeholder="示例：已选16元商品，还差4元，小伙伴们快来凑单！！" value="{{discount.content.detail || ''}}"/>
         <view class="label">
@@ -13,7 +15,7 @@
         </view>
         <input bindinput="descriptionEventFunc" id="description" class="description form-common-style" placeholder="示例：199-100；满20起送等" value="{{discount.disForm || ''}}" auto-focus/>
         <view class="label">
-            添加群二维码
+            添加群二维码  <span class='red-star'>*</span>
         </view>
         <view class="QRCode-container">
             <image wx:if="{{ QRCode !== '' }}" src="{{ QRCode }}" class="image-item"></image>
@@ -22,7 +24,7 @@
             </view>
         </view>
         <view class="label">
-            添加照片信息
+            添加照片信息  <span class='red-star'>*</span>
         </view>
         <view class="images-container">
             <!--<image wx:if="{{discount.img}}" src="{{discount.img}}" class="image-item"></image>-->
@@ -38,3 +40,6 @@
         <button formType="submit" type="primary" class="submit form-common-style"> 立即发布 </button>
     </view>
 </form>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}"/>

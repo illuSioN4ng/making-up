@@ -54,3 +54,12 @@
     font-size: 12px;
 }
 
+.my_wetoast_title {
+    font-size: 40rpx;
+    font-family: arial,\5FAE\8F6F\96C5\9ED1,\5b8b\4f53;
+}
+
+.red-star {
+    color: red;
+    font-size: 34rpx;
+}
