@@ -176,17 +176,25 @@
   top: 50%;
   left: 50%;
   width: 400rpx;
-  height: 460rpx;
+  /*height: 460rpx;*/
+  border-radius: 10rpx;
   transform: translate(-50%, -50%);
   background-color: #fff;
-  padding: 40rpx 20rpx;
-  font-size: 40rpx;
+  padding: 40rpx 0 0;
+  font-size: 30rpx;
   line-height: 50rpx;
   text-align: center;
 }
 
-.QRCde-show {
-  width: 360rpx;
-  height: 360rpx;
-  margin-top: 50rpx;
+.QRCImag-container {
+  margin-top: 20rpx;
+  border-top: solid 2rpx #e5e5e5;
+  background-color: #f6f6f8;
+  border-radius: 0 0 10rpx 10rpx;
+}
+
+.QRCode-show {
+  width: 280rpx;
+  height: 280rpx;
+  margin: 50rpx 0;
 }

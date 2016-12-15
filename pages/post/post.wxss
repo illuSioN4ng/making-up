@@ -43,6 +43,7 @@
 }
 
 .image-item {
+    box-sizing: border-box;
     float: left;
     width: 230rpx;
     height: 230rpx;
