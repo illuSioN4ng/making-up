@@ -24,7 +24,7 @@
       </view>      
     </view>
     <view class="content-container" bindtap="navToDetail" data-id="{{ item.id }}">
-       <image class="content-picture" src="{{ item.pictures[0] }}" background-size="cover"></image>
+       <image class="content-picture" src="{{ item.pictures[0] }}" background-size="cover" mode="aspectFit"></image>
        <view class="content-text">
           <view class="title">
             {{ item.title }}

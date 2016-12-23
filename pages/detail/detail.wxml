@@ -22,7 +22,7 @@
                 {{ order.description }}
             </view>
             <view class="piuctures-container">
-            <image class="content-picture" wx:for="{{ order.pictures }}" wx:key="{{ index }}" src="{{ item }}" background-size="cover"></image>            
+            <image class="content-picture" wx:for="{{ order.pictures }}" wx:key="{{ index }}" src="{{ item }}" background-size="cover" mode="aspectFit"></image>            
             </view>
             <view class="order-description" wx:if="{{order.url != ''}}">
                 活动页面链接
