@@ -49,3 +49,13 @@
             }
         ```
 7. 调试时，切换机型，首页浮动“＋”入口位置下移。
+
+### how to run
+需要申请一个leancloud账号以及应用，找到应用中的设置中的应用key，更改app.js中的对应的appid和appkey，如下：
+```
+AV.init({ 
+      appId: '你自己的appId或者测试用例', 
+      appKey: '你自己的appKey或者测试用例', 
+      });
+```
+    测试用例中appId: 'DshsfhQRaevm0oRTrm36Ix3u-gzGzoHsz',appKey: 'MFkExxSQFTK6q6G5LlwSIYXf'
